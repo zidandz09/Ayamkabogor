@@ -6,7 +6,7 @@ import axions from 'axios';
 // Gunakan gambar yang sama atau beda dengan login, bebas.
 // Untuk preview saya pakai placeholder. Di laptop, ganti dengan import gambar lokalmu.
 import registerImage from "../assets/ayam-kampung-bakar-kecap.jpeg";
-const API_BASE = "http://127.0.0.1:8000/api"
+const API_BASE = import.meta.env.VITE_API_URL
 const RegisterPage = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({

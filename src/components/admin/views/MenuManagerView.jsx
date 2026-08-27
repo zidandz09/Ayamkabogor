@@ -17,7 +17,7 @@ export default function MenuManagerView() {
     const [currentMenu, setCurrentMenu] = useState({});
 
     // Base URL Storage Laravel
-    const STORAGE_URL = "http://127.0.0.1:8000/storage/";
+    const STORAGE_URL = import.meta.env.VITE_STORAGE_URL + "/";
 
     // --- 1. FETCH DATA ---
     const fetchProducts = async () => {
@@ -28,7 +28,7 @@ export default function MenuManagerView() {
         }
 
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/products', {
+            const response = await axios.get(import.meta.env.VITE_API_URL + "/products", {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -81,7 +81,7 @@ export default function MenuManagerView() {
 
         const token = localStorage.getItem('token');
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/products/${id}`, {
+            await axios.delete(`${import.meta.env.VITE_API_URL}/products/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 

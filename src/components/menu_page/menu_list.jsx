@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useCart } from '../../contexts/CartContext';
 
 // --- KONFIGURASI URL ---
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 const API_URL = `${BASE_URL}/api/products`;
 const STORAGE_URL = `${BASE_URL}/storage`;
 

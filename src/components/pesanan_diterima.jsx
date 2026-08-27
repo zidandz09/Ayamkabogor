@@ -28,7 +28,7 @@ const PesananDiterima = () => {
                 <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-6 md:gap-8 lg:gap-12">
 
                     {/* Stat 1 */}
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center text-center flex-1">
                         <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black ">
                             67
                         </h3>
@@ -41,7 +41,7 @@ const PesananDiterima = () => {
                     <div className="hidden md:block w-px h-20 bg-orange-700"></div>
 
                     {/* Stat 2 */}
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center text-center flex-1">
                         <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
                             30
                         </h3>
@@ -54,7 +54,7 @@ const PesananDiterima = () => {
                     <div className="hidden md:block w-px h-20 bg-orange-700"></div>
 
                     {/* Stat 3 */}
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center text-center flex-1">
                         <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
                             40
                         </h3>

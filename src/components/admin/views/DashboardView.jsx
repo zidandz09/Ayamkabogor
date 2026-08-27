@@ -53,7 +53,7 @@ export default function DashboardView() {
 
             setIsLoading(true);
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/dashboard', {
+                const response = await axios.get(import.meta.env.VITE_API_URL + "/dashboard", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     },

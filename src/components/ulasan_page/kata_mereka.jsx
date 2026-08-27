@@ -6,7 +6,7 @@ import { Loader2, AlertTriangle, Star } from 'lucide-react';
 // Mengganti import file lokal (../../assets/...) dengan URL placeholder yang relevan.
 import BG_PLACEHOLDER from '../../assets/ayam-kampung-bakar-kecap.jpeg';
 
-const API_URL = "http://127.0.0.1:8000/api/reviewshome";
+const API_URL = import.meta.env.VITE_API_URL + "/reviewshome";
 
 const KataMereka = () => {
     const [reviews, setReviews] = useState([]);

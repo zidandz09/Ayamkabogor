@@ -34,7 +34,7 @@ const CustomersView = () => {
 
         setIsLoading(true);
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/users', {
+            const response = await axios.get(import.meta.env.VITE_API_URL + "/users", {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -130,10 +130,10 @@ const CustomersView = () => {
 
         try {
             if (isEditing) {
-                await axios.put(`http://127.0.0.1:8000/api/user/${formData.id}`, payload, { headers });
+                await axios.put(`${import.meta.env.VITE_API_URL}/user/${formData.id}`, payload, { headers });
                 alert('✅ Data berhasil diperbarui!');
             } else {
-                await axios.post('http://127.0.0.1:8000/api/user/', payload, { headers });
+                await axios.post(import.meta.env.VITE_API_URL + "/user/", payload, { headers });
                 alert('✅ User baru berhasil ditambahkan!');
             }
 
@@ -155,7 +155,7 @@ const CustomersView = () => {
 
         const token = localStorage.getItem('token');
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/users/${id}`, {
+            await axios.delete(`${import.meta.env.VITE_API_URL}/users/${id}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             alert('✅ User berhasil dihapus');

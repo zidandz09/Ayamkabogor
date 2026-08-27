@@ -20,7 +20,7 @@ const PesananDiterima2 = () => {
                 <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-6 md:gap-8 lg:gap-12">
 
                     {/* Stat 1 */}
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center text-center flex-1">
                         {/* WARNA TEXT DISESUAIKAN AGAR LEBIH KONTRAST DI BACKGROUND ORANYE BARU */}
                         <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#7C2D12] ">
                             67
@@ -35,7 +35,7 @@ const PesananDiterima2 = () => {
                     <div className="hidden md:block w-px h-20 bg-[#7C2D12] opacity-70"></div>
 
                     {/* Stat 1 */}
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center text-center flex-1">
                         {/* WARNA TEXT DISESUAIKAN AGAR LEBIH KONTRAST DI BACKGROUND ORANYE BARU */}
                         <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#7C2D12]">
                             40
@@ -50,7 +50,7 @@ const PesananDiterima2 = () => {
                     <div className="hidden md:block w-px h-20 bg-[#7C2D12] opacity-70"></div>
 
                     {/* Stat 1 */}
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center text-center flex-1">
                         {/* WARNA TEXT DISESUAIKAN AGAR LEBIH KONTRAST DI BACKGROUND ORANYE BARU */}
                         <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#7C2D12]">
                             30

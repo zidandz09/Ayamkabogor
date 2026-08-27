@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone, MapPin, Edit2, Save, CheckCircle, AlertTriangle, LogOut } from 'lucide-react';
 
 // --- KONFIGURASI API ---
-const BASE_API_URL = "http://127.0.0.1:8000/api";
+const BASE_API_URL = import.meta.env.VITE_API_URL;
 
 const UserProfileSecure = () => {
     // State untuk Data Profil

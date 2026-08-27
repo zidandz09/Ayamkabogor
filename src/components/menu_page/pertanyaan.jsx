@@ -7,7 +7,7 @@ const PunyaPertanyaan = () => {
     const handleWhatsAppClick = () => {
         // Fire & Forget: Kirim request tanpa menunggu response (await)
         // agar user langsung diarahkan ke WhatsApp tanpa delay.
-        axios.post('http://127.0.0.1:8000/api/cta')
+        axios.post(import.meta.env.VITE_API_URL + "/cta")
             .then(() => {
                 console.log("CTA WhatsApp berhasil dicatat");
             })

@@ -16,7 +16,7 @@ const RiwayatPesanan = () => {
     const [error, setError] = useState(null);
 
     // Base URL untuk gambar (Sesuaikan jika folder storage Anda berbeda)
-    const STORAGE_URL = "http://127.0.0.1:8000/storage/";
+    const STORAGE_URL = import.meta.env.VITE_STORAGE_URL + "/";
 
     // 1. Fetch Semua Order (GET /api/orders)
     useEffect(() => {
@@ -30,7 +30,7 @@ const RiwayatPesanan = () => {
 
             try {
                 setIsLoading(true);
-                const response = await axios.get('http://127.0.0.1:8000/api/orders', {
+                const response = await axios.get(import.meta.env.VITE_API_URL + "/orders", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
@@ -64,7 +64,7 @@ const RiwayatPesanan = () => {
         setSelectedOrder({ id: orderId });
 
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/order/${orderId}`, {
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/order/${orderId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 

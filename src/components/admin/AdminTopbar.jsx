@@ -11,7 +11,7 @@ export default function AdminTopbar({ isSidebarOpen, setIsSidebarOpen }) {
             if (!token) return;
 
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/profile', {
+                const response = await axios.get(import.meta.env.VITE_API_URL + "/profile", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 

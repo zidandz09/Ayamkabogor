@@ -13,7 +13,7 @@ export default function ProductModal({
     const [isSaving, setIsSaving] = useState(false);
 
     // URL Storage untuk preview gambar lama
-    const STORAGE_URL = "http://127.0.0.1:8000/storage/";
+    const STORAGE_URL = import.meta.env.VITE_STORAGE_URL + "/";
 
     // Reset method patch saat modal dibuka dalam mode edit
     useEffect(() => {
@@ -69,13 +69,13 @@ export default function ProductModal({
         }
 
         try {
-            let url = 'http://127.0.0.1:8000/api/products';
+            let url = import.meta.env.VITE_API_URL + "/products";
 
             // Jika Mode EDIT:
             // 1. Arahkan ke endpoint update specific ID
             // 2. Tambahkan _method=PATCH (Laravel requirement untuk FormData)
             if (isEditing) {
-                url = `http://127.0.0.1:8000/api/products/${currentMenu.id}?_method=PATCH`;
+                url = `${import.meta.env.VITE_API_URL}/products/${currentMenu.id}?_method=PATCH`;
                 formData.append('_method', 'PATCH');
             }
 

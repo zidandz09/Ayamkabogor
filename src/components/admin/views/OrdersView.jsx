@@ -24,7 +24,7 @@ export default function OrdersView() {
     const [editFormData, setEditFormData] = useState([]); // State sementara untuk edit produk
 
     // URL Gambar (Sesuaikan dengan path storage Laravel kamu)
-    const STORAGE_URL = "http://127.0.0.1:8000/storage/";
+    const STORAGE_URL = import.meta.env.VITE_STORAGE_URL + "/";
 
     // --- 1. FETCH DATA ORDERS ---
     const fetchOrders = async () => {
@@ -37,7 +37,7 @@ export default function OrdersView() {
 
         setIsLoading(true);
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/orders', {
+            const response = await axios.get(import.meta.env.VITE_API_URL + "/orders", {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -93,7 +93,7 @@ export default function OrdersView() {
         setSelectedOrder({ id: orderId }); // Placeholder ID saat loading
 
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/order/${orderId}`, {
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/order/${orderId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -128,7 +128,7 @@ export default function OrdersView() {
 
         const token = localStorage.getItem('token');
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/order/${id}`, {
+            await axios.delete(`${import.meta.env.VITE_API_URL}/order/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             alert("Pesanan berhasil dihapus.");
@@ -149,7 +149,7 @@ export default function OrdersView() {
         setIsProcessing(true);
 
         try {
-            await axios.patch(`http://127.0.0.1:8000/api/order/${selectedOrder.id}`,
+            await axios.patch(`${import.meta.env.VITE_API_URL}/order/${selectedOrder.id}`,
                 { status: newStatus },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -182,7 +182,7 @@ export default function OrdersView() {
         };
 
         try {
-            await axios.put(`http://127.0.0.1:8000/api/order/${selectedOrder.id}`,
+            await axios.put(`${import.meta.env.VITE_API_URL}/order/${selectedOrder.id}`,
                 payload,
                 { headers: { Authorization: `Bearer ${token}` } }
             );

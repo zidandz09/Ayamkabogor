@@ -4,8 +4,8 @@ import { Star, Loader2, X, CheckCircle, AlertTriangle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const REVIEWS_API_URL = "http://127.0.0.1:8000/api/reviews";
-const PRODUCTS_API_URL = "http://127.0.0.1:8000/api/products";
+const REVIEWS_API_URL = import.meta.env.VITE_API_URL + "/reviews";
+const PRODUCTS_API_URL = import.meta.env.VITE_API_URL + "/products";
 
 // --- Custom Modal Component (Pengganti Alert) ---
 const CustomModal = ({ modalData, onClose }) => {

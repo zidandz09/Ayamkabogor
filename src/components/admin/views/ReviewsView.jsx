@@ -19,7 +19,7 @@ export default function ReviewsView() {
 
         setIsLoading(true);
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/reviews', {
+            const response = await axios.get(import.meta.env.VITE_API_URL + "/reviews", {
                 headers: { Authorization: `Bearer ${token}` },
                 params: { status: filterStatus }
             });
@@ -49,7 +49,7 @@ export default function ReviewsView() {
         const newState = currentState === 'show' ? 'hide' : 'show';
 
         try {
-            await axios.patch(`http://127.0.0.1:8000/api/reviews/${id}`,
+            await axios.patch(`${import.meta.env.VITE_API_URL}/reviews/${id}`,
                 { state: newState }, // Payload
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -69,7 +69,7 @@ export default function ReviewsView() {
 
         const token = localStorage.getItem('token');
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/reviews/${id}`, {
+            await axios.delete(`${import.meta.env.VITE_API_URL}/reviews/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 

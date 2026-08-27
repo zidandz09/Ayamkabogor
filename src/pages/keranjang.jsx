@@ -63,7 +63,7 @@ const Keranjang_belanja = () => {
             // 4. Kirim POST Request ke Backend
             // (Di preview ini pasti error karena tidak ada backend 127.0.0.1, jadi kita try-catch khusus preview)
             try {
-                await axios.post('http://127.0.0.1:8000/api/order/', payload, {
+                await axios.post(import.meta.env.VITE_API_URL + "/order/", payload, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'application/json'

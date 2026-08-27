@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 // API Configuration
-const API_BASE_URL = "http://127.0.0.1:8000/api";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 const FORGOT_PASSWORD_URL = `${API_BASE_URL}/forgot-password`;
 const RESET_PASSWORD_URL = `${API_BASE_URL}/reset-password`;
 

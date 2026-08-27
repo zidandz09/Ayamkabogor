@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Loader } from 'lucide-react';
 import axios from 'axios';
 
 // Konfigurasi URL
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 const API_URL = `${BASE_URL}/api/products`;
 const STORAGE_URL = `${BASE_URL}/storage`;
 
