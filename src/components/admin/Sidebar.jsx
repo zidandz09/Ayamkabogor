@@ -12,7 +12,7 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen, activeTa
         if (window.confirm('Yakin ingin keluar dari Panel Admin?')) {
             localStorage.removeItem('token');
             localStorage.removeItem('user');
-            navigate('/login'); // Redirect ke halaman login
+            navigate('/login');
         }
     };
 
@@ -44,7 +44,7 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen, activeTa
                 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
             `}>
                 {/* Header Sidebar */}
-                <div className="h-16 flex items-center justify-center px-6 border-b border-gray-900">
+                <div className="h-16 flex items-center justify-center px-6 ">
                     <img src={logo} alt="Logo Ayam Kabogor" className="h-10 object-contain" />
                     <button
                         onClick={() => setIsSidebarOpen(false)}
@@ -65,8 +65,7 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen, activeTa
                                 key={item.id}
                                 onClick={() => {
                                     setActiveTab(item.id);
-                                    // Opsional: Tutup sidebar otomatis di mobile saat menu diklik
-                                    // setIsSidebarOpen(false); 
+
                                 }}
                                 className={`
                                     w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors
